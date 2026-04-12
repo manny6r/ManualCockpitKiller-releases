@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ManualCockpitKiller — Multi-Monitor Workspace Manager</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#111827;--surface:#141a26;--text:#f2f2f7;--muted:#8a8fa8;--teal:#00d4aa;--blue:#60a5fa;--border:#323a50}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;min-height:100vh;overflow-x:hidden}
+
+/* Aurora background */
+.aurora{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.aurora .orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.35;animation:drift 12s ease-in-out infinite alternate}
+.aurora .orb:nth-child(1){width:500px;height:500px;background:rgba(0,180,220,.4);top:-10%;left:-5%;animation-delay:0s}
+.aurora .orb:nth-child(2){width:400px;height:400px;background:rgba(100,60,220,.35);top:5%;right:-5%;animation-delay:-3s}
+.aurora .orb:nth-child(3){width:450px;height:450px;background:rgba(0,212,170,.3);bottom:10%;left:30%;animation-delay:-6s}
+.aurora .orb:nth-child(4){width:350px;height:350px;background:rgba(120,50,180,.25);bottom:-5%;right:10%;animation-delay:-9s}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-20px) scale(1.05)}100%{transform:translate(-20px,30px) scale(.95)}}
+
+/* Content */
+.content{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:80px 24px;text-align:center}
+
+/* Logo */
+.logo{width:80px;height:80px;margin:0 auto 28px;border-radius:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(12px)}
+.logo img{width:56px;height:56px}
+.logo-placeholder{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--teal),var(--blue));opacity:.8}
+
+/* Typography */
+h1{font-size:3.2em;font-weight:800;letter-spacing:-1.5px;background:linear-gradient(135deg,var(--teal),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px;line-height:1.1}
+.tagline{font-size:1.2em;color:var(--muted);margin-bottom:48px;line-height:1.6}
+
+/* Download button */
+.dl-btn{display:inline-flex;align-items:center;gap:10px;background:var(--teal);color:var(--bg);font-size:1.1em;font-weight:700;padding:16px 36px;border-radius:50px;text-decoration:none;transition:all .2s ease;box-shadow:0 0 30px rgba(0,212,170,.25)}
+.dl-btn:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(0,212,170,.4)}
+.dl-btn svg{width:20px;height:20px}
+.version{display:block;margin-top:12px;color:var(--muted);font-size:.85em}
+
+/* Features */
+.features{margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:left}
+.feat{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:22px 24px;transition:border-color .2s}
+.feat:hover{border-color:rgba(0,212,170,.2)}
+.feat h3{font-size:.95em;font-weight:600;margin-bottom:6px;color:var(--text)}
+.feat p{font-size:.85em;color:var(--muted);line-height:1.5}
+
+/* Footer */
+.footer{margin-top:80px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);color:var(--muted);font-size:.8em}
+.footer a{color:var(--teal);text-decoration:none}
+
+/* Mobile */
+@media(max-width:600px){
+h1{font-size:2.2em}
+.features{grid-template-columns:1fr}
+.content{padding:48px 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="aurora">
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+</div>
+
+<div class="content">
+  <div class="logo"><div class="logo-placeholder"></div></div>
+
+  <h1>ManualCockpitKiller</h1>
+  <p class="tagline">Launch, position and control multiple windows across monitors with one click. Your multi-monitor workspace — automated.</p>
+
+  <a href="https://github.com/manny6r/ManualCockpitKiller-releases/releases/latest" class="dl-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download for Windows
+  </a>
+  <span class="version">v1.0 &middot; Windows 10/11 &middot; Free</span>
+
+  <div class="features">
+    <div class="feat">
+      <h3>Multi-Monitor Layouts</h3>
+      <p>Position windows precisely across all your monitors with saved workspace configurations.</p>
+    </div>
+    <div class="feat">
+      <h3>One-Click Launch</h3>
+      <p>Launch all your apps and place them exactly where you want with a single click.</p>
+    </div>
+    <div class="feat">
+      <h3>Profiles</h3>
+      <p>Save different workspace setups for gaming, work, streaming or any other use case.</p>
+    </div>
+    <div class="feat">
+      <h3>Browser Extension</h3>
+      <p>Control browser tabs and web apps with per-tab volume control and extension monitoring.</p>
+    </div>
+    <div class="feat">
+      <h3>Click Sequences</h3>
+      <p>Automate post-launch actions with programmable click sequences for each workspace.</p>
+    </div>
+    <div class="feat">
+      <h3>Auto Updates</h3>
+      <p>The app checks for updates automatically. One click to download and install — no manual work needed.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    Created by Maty&aacute;&scaron; Persk&yacute; &middot; <a href="https://github.com/manny6r/ManualCockpitKiller-releases/releases">All releases</a>
+  </div>
+</div>
+
+</body>
+</html>
