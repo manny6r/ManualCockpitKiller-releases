@@ -71,11 +71,26 @@ h1{font-size:2.2em}
   <h1>ManualCockpitKiller</h1>
   <p class="tagline">Launch, position and control multiple windows across monitors with one click. Your multi-monitor workspace — automated.</p>
 
-  <a href="https://github.com/manny6r/ManualCockpitKiller-releases/releases/latest" class="dl-btn">
+  <a href="#" id="dl-btn" class="dl-btn" onclick="downloadLatest(event)">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
     Download for Windows
   </a>
-  <span class="version">v1.0 &middot; Windows 10/11 &middot; Free</span>
+  <span class="version" id="ver">Windows 10/11 &middot; Free</span>
+  <script>
+  var repo='manny6r/ManualCockpitKiller-releases',dlUrl=null;
+  fetch('https://api.github.com/repos/'+repo+'/releases/latest')
+    .then(function(r){return r.json()})
+    .then(function(d){
+      var tag=d.tag_name||'';
+      document.getElementById('ver').textContent=tag+' \u00b7 Windows 10/11 \u00b7 Free';
+      (d.assets||[]).forEach(function(a){if(a.name.endsWith('.exe'))dlUrl=a.browser_download_url});
+    }).catch(function(){});
+  function downloadLatest(e){
+    e.preventDefault();
+    if(dlUrl)window.location.href=dlUrl;
+    else window.location.href='https://github.com/'+repo+'/releases/latest';
+  }
+  </script>
 
   <div class="features">
     <div class="feat">
