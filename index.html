@@ -37,6 +37,9 @@ h1{font-size:3.2em;font-weight:800;letter-spacing:-1.5px;background:linear-gradi
 .dl-btn:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(0,212,170,.4)}
 .dl-btn svg{width:20px;height:20px}
 .version{display:block;margin-top:12px;color:var(--muted);font-size:.85em}
+.ext-btn{display:inline-flex;align-items:center;gap:8px;color:var(--teal);font-size:.95em;font-weight:600;padding:12px 28px;border-radius:50px;text-decoration:none;border:1px solid rgba(0,212,170,.2);transition:all .2s}
+.ext-btn:hover{background:rgba(0,212,170,.08);border-color:rgba(0,212,170,.4);transform:translateY(-2px)}
+.ext-btn svg{width:18px;height:18px}
 
 /* Features */
 .features{margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:left}
@@ -80,6 +83,12 @@ h1{font-size:2.2em}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
     Download for Windows
   </a>
+  <div style="margin-top:18px">
+    <a href="https://chromewebstore.google.com/detail/manualcockpitkiller/bgficbafjifdhlidbehldcppljnfdbnh" class="ext-btn" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+      Browser Extension
+    </a>
+  </div>
   <span class="version" id="ver">Windows 10/11 &middot; Free</span>
   <script>
   var repo='manny6r/ManualCockpitKiller-releases',dlUrl=null;
