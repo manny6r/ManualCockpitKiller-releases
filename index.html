@@ -39,6 +39,8 @@ h1{font-size:3.2em;font-weight:800;letter-spacing:-1.5px;background:linear-gradi
 .version{display:block;margin-top:12px;color:var(--muted);font-size:.85em}
 .ext-btn{display:inline-flex;align-items:center;gap:8px;color:var(--teal);font-size:.95em;font-weight:600;padding:12px 28px;border-radius:50px;text-decoration:none;border:1px solid rgba(0,212,170,.2);transition:all .2s}
 .ext-btn:hover{background:rgba(0,212,170,.08);border-color:rgba(0,212,170,.4);transform:translateY(-2px)}
+.ext-btn-disabled{color:var(--muted);border-color:rgba(255,255,255,.08);cursor:default;opacity:.6}
+.ext-btn-disabled:hover{background:transparent;border-color:rgba(255,255,255,.08);transform:none}
 .ext-btn svg{width:18px;height:18px}
 
 /* Features */
@@ -84,10 +86,10 @@ h1{font-size:2.2em}
     Download for Windows
   </a>
   <div style="margin-top:18px">
-    <a href="https://chromewebstore.google.com/detail/manualcockpitkiller/bgficbafjifdhlidbehldcppljnfdbnh" class="ext-btn" target="_blank">
+    <span class="ext-btn ext-btn-disabled">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
-      Browser Extension
-    </a>
+      Browser Extension &middot; in progress
+    </span>
   </div>
   <span class="version" id="ver">Windows 10/11 &middot; Free</span>
   <script>
